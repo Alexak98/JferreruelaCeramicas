@@ -630,23 +630,46 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   .section-head { margin-bottom: 32px; }
   .section-sub { font-size: 0.95rem; }
 
-  /* Filtros catálogo: scroll horizontal en móvil */
+  /* Filtros catálogo: scroll horizontal contenido en una caja */
   .filters {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: auto;
-    padding: 4px 20px;
-    margin-left: -20px;
-    margin-right: -20px;
-    margin-bottom: 32px;
+    padding: 10px 12px;
+    margin: 0 0 32px;
+    background: var(--crema-claro);
+    border: 1px solid var(--linea);
+    border-radius: 999px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     scroll-snap-type: x proximity;
+    position: relative;
+    /* Indicador de scroll: degradados a los lados */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 16px,
+      #000 calc(100% - 16px),
+      transparent 100%
+    );
+            mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 16px,
+      #000 calc(100% - 16px),
+      transparent 100%
+    );
   }
   .filters::-webkit-scrollbar { display: none; }
   .filter {
     flex-shrink: 0;
     scroll-snap-align: start;
+    border-color: transparent;
+    background: transparent;
+  }
+  .filter.active {
+    background: var(--azul);
+    color: var(--crema-claro);
   }
 
   /* Catálogo: 2 columnas más densas en móvil */
