@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerámicas Ferreruela — Piezas artesanales y talleres</title>
+  <meta name="description" content="Cerámica artesanal hecha a mano. Catálogo de piezas únicas y talleres para crear tu propia cerámica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="img/logo.png" alt="Cerámicas Ferreruela" class="brand-logo" onerror="this.style.display='none'" />
+        <span class="brand-text">Cerámicas Ferreruela</span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="#historia">Historia</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#talleres">Talleres</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">Cerámica artesanal</p>
+      <h1>Piezas únicas,<br/>hechas a mano.</h1>
+      <p class="lead">Tradición, barro y tiempo. Descubre nuestro catálogo o ven a moldear tu propia pieza en uno de nuestros talleres.</p>
+      <div class="hero-cta">
+        <a href="#catalogo" class="btn btn-primary">Ver catálogo</a>
+        <a href="#talleres" class="btn btn-ghost">Talleres</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HISTORIA -->
+  <section id="historia" class="section section-historia">
+    <div class="container grid-2">
+      <div class="historia-img">
+        <div class="img-placeholder" data-label="Foto del taller / artesano"></div>
+      </div>
+      <div class="historia-text">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2>Tres generaciones moldeando barro</h2>
+        <p>Cerámicas Ferreruela nace del amor por lo hecho a mano y por la tradición alfarera transmitida de generación en generación. Cada pieza que sale de nuestro taller es fruto de horas de torno, paciencia y un cuidado decorado a mano.</p>
+        <p>Trabajamos con arcillas naturales y esmaltes propios, siguiendo técnicas heredadas y dándoles un toque contemporáneo. Creemos en una cerámica honesta: lenta, imperfecta y viva.</p>
+        <ul class="historia-values">
+          <li><strong>100% artesanal</strong><span>Cada pieza es única</span></li>
+          <li><strong>Materiales naturales</strong><span>Arcillas y esmaltes propios</span></li>
+          <li><strong>Tradición viva</strong><span>Técnicas heredadas</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="catalogo" class="section section-catalogo">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Catálogo</p>
+        <h2>Nuestras piezas</h2>
+        <p class="section-sub">Escaparate de piezas disponibles. Para consultas o encargos, contáctanos directamente.</p>
+      </div>
+
+      <div class="filters" role="tablist">
+        <button class="filter active" data-filter="all">Todo</button>
+        <button class="filter" data-filter="jarras">Jarras</button>
+        <button class="filter" data-filter="platos">Platos</button>
+        <button class="filter" data-filter="tazas">Tazas</button>
+        <button class="filter" data-filter="jarrones">Jarrones</button>
+        <button class="filter" data-filter="decorativo">Decorativo</button>
+      </div>
+
+      <div class="catalog-grid">
+        <article class="card" data-cat="jarras">
+          <div class="card-img"><div class="img-placeholder" data-label="Jarra clásica"></div></div>
+          <div class="card-body">
+            <h3>Jarra clásica</h3>
+            <p>Decoración floral azul cobalto sobre fondo crema.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="platos">
+          <div class="card-img"><div class="img-placeholder" data-label="Plato decorado"></div></div>
+          <div class="card-body">
+            <h3>Plato decorado</h3>
+            <p>Plato de mesa pintado a mano, motivo central.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="tazas">
+          <div class="card-img"><div class="img-placeholder" data-label="Taza de café"></div></div>
+          <div class="card-body">
+            <h3>Taza de café</h3>
+            <p>Cerámica esmaltada, asa cómoda. 250 ml.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="jarrones">
+          <div class="card-img"><div class="img-placeholder" data-label="Jarrón alto"></div></div>
+          <div class="card-body">
+            <h3>Jarrón alto</h3>
+            <p>Pieza decorativa torneada a mano.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="platos">
+          <div class="card-img"><div class="img-placeholder" data-label="Fuente honda"></div></div>
+          <div class="card-body">
+            <h3>Fuente honda</h3>
+            <p>Ideal para servir. Apta para horno.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="decorativo">
+          <div class="card-img"><div class="img-placeholder" data-label="Azulejo decorativo"></div></div>
+          <div class="card-body">
+            <h3>Azulejo decorativo</h3>
+            <p>Pintado a mano, motivo tradicional.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="tazas">
+          <div class="card-img"><div class="img-placeholder" data-label="Juego de tazas"></div></div>
+          <div class="card-body">
+            <h3>Juego de tazas</h3>
+            <p>Set de 4. Decoración a juego.</p>
+          </div>
+        </article>
+
+        <article class="card" data-cat="jarras">
+          <div class="card-img"><div class="img-placeholder" data-label="Jarra para agua"></div></div>
+          <div class="card-body">
+            <h3>Jarra para agua</h3>
+            <p>1,5 L. Pico vertedor. Esmalte mate interior.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="catalog-note">¿Te interesa alguna pieza? <a href="#contacto">Escríbenos</a> y te damos toda la información.</p>
+    </div>
+  </section>
+
+  <!-- TALLERES -->
+  <section id="talleres" class="section section-talleres">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow light">Talleres</p>
+        <h2>Crea tu propia cerámica</h2>
+        <p class="section-sub">Aprende a modelar, tornear y decorar tus propias piezas en nuestro taller. Sesiones para todos los niveles.</p>
+      </div>
+
+      <div class="talleres-grid">
+        <article class="taller-card">
+          <div class="taller-num">01</div>
+          <h3>Iniciación al torno</h3>
+          <p>Primer contacto con el torno alfarero. Aprende a centrar, abrir y levantar tu primera pieza.</p>
+          <ul>
+            <li>Duración: 3 horas</li>
+            <li>Grupo reducido (máx. 6)</li>
+            <li>Materiales incluidos</li>
+          </ul>
+        </article>
+
+        <article class="taller-card">
+          <div class="taller-num">02</div>
+          <h3>Modelado a mano</h3>
+          <p>Técnicas de churro, placa y pellizco. Crea piezas decorativas o funcionales sin necesidad de torno.</p>
+          <ul>
+            <li>Duración: 2 horas</li>
+            <li>Todos los niveles</li>
+            <li>Te llevas tu pieza</li>
+          </ul>
+        </article>
+
+        <article class="taller-card">
+          <div class="taller-num">03</div>
+          <h3>Decoración y esmaltado</h3>
+          <p>Aprende a decorar a mano con engobes y esmaltes tradicionales. Técnica del azul cobalto.</p>
+          <ul>
+            <li>Duración: 2,5 horas</li>
+            <li>Nivel intermedio</li>
+            <li>Cocción incluida</li>
+          </ul>
+        </article>
+
+        <article class="taller-card">
+          <div class="taller-num">04</div>
+          <h3>Taller para grupos</h3>
+          <p>Experiencias para empresas, despedidas, cumpleaños o regalos. Adaptamos contenido y duración.</p>
+          <ul>
+            <li>A medida</li>
+            <li>Desde 6 personas</li>
+            <li>Consulta disponibilidad</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="talleres-cta">
+        <a href="#contacto" class="btn btn-primary">Reservar plaza</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section section-contacto">
+    <div class="container grid-2">
+      <div class="contacto-info">
+        <p class="eyebrow">Contacto</p>
+        <h2>Visítanos o escríbenos</h2>
+        <p>Estaremos encantados de recibirte en el taller, resolver tus dudas o ayudarte con un encargo personalizado.</p>
+
+        <ul class="contacto-list">
+          <li>
+            <span class="contacto-label">Taller</span>
+            <span>Calle del Alfar, 00 — Localidad, Provincia</span>
+          </li>
+          <li>
+            <span class="contacto-label">Teléfono</span>
+            <a href="tel:+34000000000">+34 000 000 000</a>
+          </li>
+          <li>
+            <span class="contacto-label">Email</span>
+            <a href="mailto:hola@ceramicasferreruela.com">hola@ceramicasferreruela.com</a>
+          </li>
+          <li>
+            <span class="contacto-label">Horario</span>
+            <span>Mar–Sáb · 10:00 a 14:00 / 17:00 a 20:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contacto-form" onsubmit="return enviarFormulario(event)">
+        <label>
+          <span>Nombre</span>
+          <input type="text" name="nombre" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Asunto</span>
+          <select name="asunto">
+            <option>Información sobre una pieza</option>
+            <option>Encargo personalizado</option>
+            <option>Reserva de taller</option>
+            <option>Otro</option>
+          </select>
+        </label>
+        <label>
+          <span>Mensaje</span>
+          <textarea name="mensaje" rows="5" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        <p class="form-feedback" id="formFeedback" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Cerámicas Ferreruela · Hecho a mano con barro y paciencia.</p>
+      <nav class="footer-nav">
+        <a href="#historia">Historia</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#talleres">Talleres</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
