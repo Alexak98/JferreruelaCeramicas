@@ -42,9 +42,36 @@ a, button {
   -webkit-tap-highlight-color: rgba(30, 58, 138, 0.15);
 }
 
+/* Foco visible consistente para navegación por teclado */
+:focus { outline: none; }
+:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 3px;
+  border-radius: var(--radio);
+}
+
+/* Skip-link: oculto hasta que recibe foco con Tab */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 12px 16px;
+  background: var(--azul);
+  color: var(--crema-claro);
+  font-size: 0.9rem;
+  font-weight: 500;
+  z-index: 1000;
+  transform: translateY(-120%);
+  transition: transform var(--transicion);
+}
+.skip-link:focus {
+  transform: translateY(0);
+  color: var(--crema-claro);
+}
+
 img { max-width: 100%; display: block; }
 
-a { color: var(--azul); text-decoration: none; transition: var(--transicion); }
+a { color: var(--azul); text-decoration: none; transition: color var(--transicion); }
 a:hover { color: var(--azul-oscuro); }
 
 .container {
@@ -164,7 +191,7 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   width: 24px;
   height: 2px;
   background: var(--azul);
-  transition: var(--transicion);
+  transition: background var(--transicion), transform var(--transicion);
 }
 
 /* ========== Botones ========== */
@@ -179,7 +206,11 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   border-radius: var(--radio);
   cursor: pointer;
   border: 1px solid transparent;
-  transition: var(--transicion);
+  transition:
+    background var(--transicion),
+    color var(--transicion),
+    border-color var(--transicion),
+    transform var(--transicion);
   min-height: 48px;
   -webkit-appearance: none;
   appearance: none;
@@ -249,6 +280,16 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
 .section {
   padding: 100px 0;
 }
+
+/* content-visibility evita layout+paint de secciones que aún no han entrado
+   al viewport. contain-intrinsic-size reserva altura estimada para no romper
+   la barra de scroll. Gran win de LCP/TBT en páginas largas. */
+.section-talleres,
+.section-contacto,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
 .section-head {
   text-align: center;
   max-width: 700px;
@@ -312,7 +353,10 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   letter-spacing: 0.05em;
   border-radius: 999px;
   cursor: pointer;
-  transition: var(--transicion);
+  transition:
+    background var(--transicion),
+    color var(--transicion),
+    border-color var(--transicion);
   white-space: nowrap;
   -webkit-appearance: none;
   appearance: none;
@@ -338,7 +382,13 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   border: 1px solid var(--linea);
   border-radius: var(--radio);
   overflow: hidden;
-  transition: var(--transicion);
+  /* contain aísla layout/paint del resto del grid → un hover en una card
+     no puede invalidar layout de las demás. */
+  contain: layout paint;
+  transition:
+    transform var(--transicion),
+    box-shadow var(--transicion),
+    border-color var(--transicion);
 }
 .card:hover {
   transform: translateY(-4px);
@@ -359,6 +409,17 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   color: var(--gris);
 }
 .card.hidden { display: none; }
+
+/* Filtrado CSS-only del catálogo.
+   JS solo escribe `data-filter` en el grid; el motor de estilos resuelve
+   qué cards ocultar. Coste O(1) en JS independientemente del nº de cards. */
+.catalog-grid[data-filter="jarras"]     .card:not([data-cat="jarras"]),
+.catalog-grid[data-filter="platos"]     .card:not([data-cat="platos"]),
+.catalog-grid[data-filter="tazas"]      .card:not([data-cat="tazas"]),
+.catalog-grid[data-filter="jarrones"]   .card:not([data-cat="jarrones"]),
+.catalog-grid[data-filter="decorativo"] .card:not([data-cat="decorativo"]) {
+  display: none;
+}
 
 .catalog-note {
   text-align: center;
@@ -411,7 +472,10 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   border: 1px solid rgba(245, 240, 232, 0.2);
   padding: 32px;
   border-radius: var(--radio);
-  transition: var(--transicion);
+  contain: layout paint;
+  transition:
+    background var(--transicion),
+    transform var(--transicion);
 }
 .taller-card:hover {
   background: rgba(255, 255, 255, 0.08);
@@ -505,7 +569,7 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
   border: 1px solid var(--linea);
   border-radius: var(--radio);
   color: var(--tinta);
-  transition: var(--transicion);
+  transition: background var(--transicion), border-color var(--transicion);
   width: 100%;
   -webkit-appearance: none;
   appearance: none;
@@ -575,7 +639,7 @@ h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
     transform: translateY(-10px);
     opacity: 0;
     pointer-events: none;
-    transition: var(--transicion);
+    transition: transform var(--transicion), opacity var(--transicion);
     box-shadow: 0 8px 20px rgba(20, 39, 94, 0.08);
   }
   .nav-links.open {
